@@ -18,6 +18,54 @@ public class Product {
         this.category = category;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getMass() {
+        return mass;
+    }
+
+    public void setMass(double mass) {
+        this.mass = mass;
+    }
+
+    public double getCarbohydrates() {
+        return carbohydrates;
+    }
+
+    public void setCarbohydrates(double carbohydrates) {
+        this.carbohydrates = carbohydrates;
+    }
+
+    public double getFats() {
+        return fats;
+    }
+
+    public void setFats(double fats) {
+        this.fats = fats;
+    }
+
+    public double getProtein() {
+        return protein;
+    }
+
+    public void setProtein(double protein) {
+        this.protein = protein;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -28,3 +76,14 @@ public class Product {
                 "- Category (g): " + category + '\n';
     }
 }
+
+/*
+ROBIE BAZE DANYCH DIET
+W ktorej mam trzy tablice breakfast, lunch i evening
+no i po prostu przez sql zapros dodaje do potrzebnej tablicy potrzebny posilek
+to bok robie w klase db metody add - insert into
+delete
+update
+write
+ale przez inna klasse przekazuje ten zapros(to bok moge w tym drugie zrobic 12 konstandy i przekazywac ich w potrzebnych metodach tej klasy)
+ */
