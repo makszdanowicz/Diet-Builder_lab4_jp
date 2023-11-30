@@ -1,4 +1,4 @@
-package com.pwr;
+package com.pwr.db;
 
 public class Product {
     private String name;

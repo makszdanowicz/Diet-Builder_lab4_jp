@@ -1,10 +1,10 @@
-package com.pwr;
+package com.pwr.db;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataBase {
+public class DataBase implements InformationWorker{
     private final String dbURL = "jdbc:mysql://localhost:3306/diet";
     private final String dbUserName = "root";
     private final String dbPassword = "HelloWorld12345";
@@ -17,14 +17,14 @@ public class DataBase {
             System.out.println("You have a problem with connection to DB" + e.getMessage());
         }
     }
-    public void  addProductDate(Product product,String query)
+    @Override
+    public void addProductData(Product product, String query)
     {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1,product.getName());
 
-            //MOZE BYC WYJATEK Z DOUBLE I FLOAT
-            preparedStatement.setDouble(2, product.getMass());
+            preparedStatement.setDouble(2,product.getMass());
             preparedStatement.setDouble(3,product.getCarbohydrates());
             preparedStatement.setDouble(4,product.getFats());
             preparedStatement.setDouble(5,product.getProtein());
@@ -35,6 +35,7 @@ public class DataBase {
         }
     }
 
+    @Override
     public List<Product> getProductData(String query)
     {
         List<Product> productList = new ArrayList<>();
@@ -58,15 +59,16 @@ public class DataBase {
         return productList;
     }
 
-    /*
+    @Override
     public void updateProductData(String query)
     {
 
     }
-     */
+
 
     //Zrobimy ze usuwa po nazwie produktu
-    public void deleteProductData(String query, String name)
+    @Override
+    public void deleteProductData(String name,String query)
     {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
