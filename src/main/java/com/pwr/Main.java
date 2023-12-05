@@ -22,9 +22,10 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainView.fxml"));
         Parent root = loader.load();
         //Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
-        Scene scene = new Scene(root,640,480);
+        Scene scene = new Scene(root);
         stage.setTitle("DietBuilder");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 }

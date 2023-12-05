@@ -5,4 +5,5 @@ module Lab4 {
     requires java.sql;
 
     opens com.pwr;
+    opens com.pwr.gui;
 }
