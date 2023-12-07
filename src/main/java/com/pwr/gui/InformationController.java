@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -30,6 +31,17 @@ public class InformationController {
 
     @FXML
     void switchToMenu(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ActionChooserView.fxml"));
+        Parent menuRoot = loader.load();
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.setScene(new Scene(menuRoot));
+        appStage.setTitle("DietBuilder-Menu");
+        appStage.setResizable(false);
+        appStage.show();
+
+
+        /*
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ActionChooserView.fxml"));
         Parent root = loader.load();
         Stage stage = new Stage();
@@ -37,6 +49,7 @@ public class InformationController {
         stage.setTitle("DietBuilder-Menu");
         stage.setResizable(false);
         stage.showAndWait();
+        */
     }
 
 }

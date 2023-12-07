@@ -25,7 +25,7 @@
          </font></Button>
       <SplitMenuButton fx:id="productMenuButton" alignment="CENTER" layoutX="301.0" layoutY="149.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="199.0" text="Product menu">
         <items>
-          <MenuItem mnemonicParsing="false" text="Add Product" />
+          <MenuItem mnemonicParsing="false" onAction="#switchToAddProduct" text="Add Product" />
           <MenuItem mnemonicParsing="false" text="Update Product" />
             <MenuItem mnemonicParsing="false" text="Delete Product" />
         </items>

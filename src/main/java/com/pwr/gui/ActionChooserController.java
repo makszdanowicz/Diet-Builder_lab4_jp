@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -43,6 +44,17 @@ public class ActionChooserController {
 
     @FXML
     void switchToInstructionScene(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/InstructionView.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("DietBuilder-Instruction");
+        stage.setResizable(false);
+        stage.show();
+
+
+        /*
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/InstructionView.fxml"));
         Parent root = loader.load();
         Stage stage = new Stage();
@@ -50,5 +62,20 @@ public class ActionChooserController {
         stage.setTitle("DietBuilder-Instruction");
         stage.setResizable(false);
         stage.showAndWait();
+        */
+
     }
+
+    @FXML
+    void switchToAddProduct(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AddProductView.fxml"));
+        Parent root = loader.load();
+        //Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("DietBuilder-AddProduct");
+        stage.setResizable(false);
+        stage.show();
+    }
+
 }
