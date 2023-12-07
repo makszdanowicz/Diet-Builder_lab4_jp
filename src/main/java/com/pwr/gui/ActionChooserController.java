@@ -10,9 +10,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.SplitMenuButton;
 import javafx.stage.Stage;
 
-public class InformationController {
+public class ActionChooserController {
 
     @FXML
     private ResourceBundle resources;
@@ -21,7 +22,19 @@ public class InformationController {
     private URL location;
 
     @FXML
-    private Button menuButton;
+    private Button backButton;
+
+    @FXML
+    private Button endButton;
+
+    @FXML
+    private Button listProductButton;
+
+    @FXML
+    private SplitMenuButton mealsButton;
+
+    @FXML
+    private SplitMenuButton productMenuButton;
 
     @FXML
     void initialize() {
@@ -29,14 +42,13 @@ public class InformationController {
     }
 
     @FXML
-    void switchToMenu(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ActionChooserView.fxml"));
+    void switchToInstructionScene(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/InstructionView.fxml"));
         Parent root = loader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
-        stage.setTitle("DietBuilder-Menu");
+        stage.setTitle("DietBuilder-Instruction");
         stage.setResizable(false);
         stage.showAndWait();
     }
-
 }

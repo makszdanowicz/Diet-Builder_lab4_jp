@@ -60,7 +60,7 @@
          </font>
       </Text>
       <Separator layoutX="54.0" layoutY="190.0" prefHeight="5.0" prefWidth="572.0" />
-      <Button fx:id="menuButton" layoutX="373.0" layoutY="439.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="81.0" text="Menu">
+      <Button fx:id="menuButton" layoutX="373.0" layoutY="439.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="26.0" prefWidth="81.0" text="Menu">
          <font>
             <Font size="15.0" />
          </font>
