@@ -72,8 +72,8 @@ public class ActionChooserController {
     void switchToAddProduct(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/AddProductView.fxml"));
         Parent root = loader.load();
-        //Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Stage stage = new Stage();
+        Stage stage = (Stage) productMenuButton.getScene().getWindow();//Здесь вы получаете ссылку на текущий объект Stage, к которому принадлежит SplitMenuButton
+        //Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setTitle("DietBuilder-AddProduct");
         stage.setResizable(false);
