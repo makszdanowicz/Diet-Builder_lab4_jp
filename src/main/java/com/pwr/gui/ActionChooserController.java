@@ -10,7 +10,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.SplitMenuButton;
 import javafx.stage.Stage;
 
@@ -76,6 +78,23 @@ public class ActionChooserController {
         stage.setTitle("DietBuilder-AddProduct");
         stage.setResizable(false);
         stage.show();
+    }
+
+    @FXML
+    void closeProgram(ActionEvent event)
+    {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("You are about to logout!");
+        alert.setContentText("Do you want to close the program? ");
+
+        if(alert.showAndWait().get() == ButtonType.OK)
+        {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            System.out.println("You successfully logged out!");
+            stage.close();
+        }
+
     }
 
 }
