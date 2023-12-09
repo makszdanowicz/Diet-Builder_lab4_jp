@@ -81,6 +81,28 @@ public class ActionChooserController {
     }
 
     @FXML
+    void switchToUpdateProduct(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/UpdateProductView.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) productMenuButton.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("DietBuilder-UpdateProduct");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    void switchToDeleteProduct(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/DeleteProductView.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) productMenuButton.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("DietBuilder-DeleteProduct");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
     void closeProgram(ActionEvent event)
     {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
