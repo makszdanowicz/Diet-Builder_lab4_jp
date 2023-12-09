@@ -12,7 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AddProductController {
+public class AddProductController{
 
     @FXML
     private ResourceBundle resources;
