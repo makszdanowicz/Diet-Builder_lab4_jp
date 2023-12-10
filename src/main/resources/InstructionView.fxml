@@ -32,37 +32,31 @@
             <Font size="17.0" />
          </font>
       </Text>
-      <Separator layoutX="54.0" layoutY="240.0" prefHeight="5.0" prefWidth="572.0" />
-      <Text layoutX="40.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- You can also create, change and delete meals by grouping selected products into sections">
+      <Text layoutX="40.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- You can also create, change and delete meals by grouping selected products into sections">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text layoutX="54.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to do this click [Meals] button in the menu and choose the action that you would like to do">
+      <Text layoutX="53.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to do this click [Meal menu] button in the menu and choose the action that you would like ">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text layoutX="54.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="clicking the next buttons">
+      <Text layoutX="53.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to do clicking the next buttons">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Separator layoutX="54.0" layoutY="339.0" prefHeight="5.0" prefWidth="572.0" />
-      <Text layoutX="41.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- Using [Shop list] button you can generate a shopping list for the selected meal in PDF format">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Text>
-      <Text layoutX="40.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- To see list of products, that you added to a program click [List of products] button ">
+      <Separator layoutX="54.0" layoutY="297.0" prefHeight="5.0" prefWidth="572.0" />
+      <Text layoutX="40.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- Using [Shop list] button you can generate a shopping list for the selected meal in PDF format">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
       <Separator layoutX="54.0" layoutY="190.0" prefHeight="5.0" prefWidth="572.0" />
-      <Button fx:id="menuButton" layoutX="373.0" layoutY="439.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="26.0" prefWidth="81.0" text="Menu">
+      <Button fx:id="menuButton" layoutX="363.0" layoutY="405.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="26.0" prefWidth="81.0" text="Menu">
          <font>
-            <Font size="15.0" />
+            <Font size="18.0" />
          </font>
       </Button>
    </children>

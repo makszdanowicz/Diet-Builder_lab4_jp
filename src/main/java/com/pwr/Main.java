@@ -1,6 +1,5 @@
 package com.pwr;
 
-import com.pwr.gui.InformationCollector;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -16,8 +15,6 @@ import java.util.Objects;
 
 public class Main extends Application {
     public static void main(String[] args) {
-        InformationCollector collector = new InformationCollector();
-        //collector.getDecision();
         launch();
     }
 

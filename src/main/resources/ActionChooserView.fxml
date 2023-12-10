@@ -28,6 +28,7 @@
           <MenuItem mnemonicParsing="false" onAction="#switchToAddProduct" text="Add Product" />
           <MenuItem mnemonicParsing="false" onAction="#switchToUpdateProduct" text="Update Product" />
             <MenuItem mnemonicParsing="false" onAction="#switchToDeleteProduct" text="Delete Product" />
+            <MenuItem mnemonicParsing="false" onAction="#switchToShowProduct" text="Show Products" />
         </items>
          <font>
             <Font size="16.0" />
@@ -39,17 +40,22 @@
          </font>
       </Button>
       <Separator layoutX="246.0" layoutY="207.0" prefHeight="11.0" prefWidth="309.0" />
-      <Button fx:id="listProductButton" alignment="CENTER" layoutX="301.0" layoutY="236.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="199.0" text="Generate list of products">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
       <Separator layoutX="246.0" layoutY="288.0" prefHeight="25.0" prefWidth="309.0" />
-      <SplitMenuButton fx:id="mealMenuButton" layoutX="301.0" layoutY="333.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="199.0" text="Meal menu">
+      <SplitMenuButton fx:id="mealMenuButton" alignment="CENTER" layoutX="300.0" layoutY="235.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="199.0" text="Meal menu">
         <items>
           <MenuItem mnemonicParsing="false" onAction="#switchToAddMeal" text="Add to meal" />
           <MenuItem mnemonicParsing="false" onAction="#switchToUpdateMeal" text="Update meal" />
             <MenuItem mnemonicParsing="false" onAction="#switchToDeleteMeal" text="Delete from meal" />
+        </items>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </SplitMenuButton>
+      <SplitMenuButton fx:id="shopListButton" alignment="CENTER" layoutX="301.0" layoutY="322.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="199.0" text="Shop List">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#switchToBreakfastShopList" text="for Breakfast" />
+          <MenuItem mnemonicParsing="false" onAction="#switchToLunchShopList" text="for Lunch" />
+            <MenuItem mnemonicParsing="false" onAction="#switchToDinnerShopList" text="for Dinner" />
         </items>
          <font>
             <Font size="16.0" />

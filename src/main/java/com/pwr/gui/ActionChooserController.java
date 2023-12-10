@@ -31,18 +31,13 @@ public class ActionChooserController {
     private Button endButton;
 
     @FXML
-    private Button listProductButton;
-
-    @FXML
     private SplitMenuButton productMenuButton;
 
     @FXML
     private SplitMenuButton mealMenuButton;
 
     @FXML
-    void initialize() {
-        //
-    }
+    private SplitMenuButton shopListButton;
 
     @FXML
     void switchToInstructionScene(ActionEvent event) throws IOException {
@@ -54,18 +49,6 @@ public class ActionChooserController {
         stage.setTitle("DietBuilder-Instruction");
         stage.setResizable(false);
         stage.show();
-
-
-        /*
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/InstructionView.fxml"));
-        Parent root = loader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("DietBuilder-Instruction");
-        stage.setResizable(false);
-        stage.showAndWait();
-        */
-
     }
 
     @FXML
@@ -103,6 +86,17 @@ public class ActionChooserController {
     }
 
     @FXML
+    void switchToShowProduct(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ProductsListView.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) productMenuButton.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("DietBuilder-ProductList");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
     void switchToAddMeal(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/AddMealView.fxml"));
         Parent root = loader.load();
@@ -131,6 +125,39 @@ public class ActionChooserController {
         Stage stage = (Stage) mealMenuButton.getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("DietBuilder-DeleteMeal");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    void switchToBreakfastShopList(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/BreakfastShopListView.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) shopListButton.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("DietBuilder-BreakfastShopList");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    void switchToLunchShopList(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/LunchShopListView.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) shopListButton.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("DietBuilder-LunchShopList");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    void switchToDinnerShopList(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/DinnerShopListView.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) shopListButton.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("DietBuilder-DinnerShopList");
         stage.setResizable(false);
         stage.show();
     }

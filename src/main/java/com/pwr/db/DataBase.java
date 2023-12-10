@@ -2,7 +2,9 @@ package com.pwr.db;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DataBase implements InformationWorker,Meal{
     private final String dbURL = "jdbc:mysql://localhost:3306/diet";
@@ -146,5 +148,30 @@ public class DataBase implements InformationWorker,Meal{
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public Map<Product,Double> getMealData(String query) {
+        Map<Product,Double> meal = new HashMap<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next())
+            {
+                String name = resultSet.getString("name");
+                double mass = resultSet.getDouble("mass");
+                double carbohydrates = resultSet.getDouble("carbohydrates");
+                double fats = resultSet.getDouble("fats");
+                double protein = resultSet.getDouble("protein");
+                String category = resultSet.getString("category");
+                double amount = resultSet.getDouble("amount");
+
+                meal.put(new Product(name,mass,carbohydrates,fats,protein,category),amount);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return meal;
+
     }
 }

@@ -80,14 +80,3 @@ public class Product {
                 "- Category (g): " + category + '\n';
     }
 }
-
-/*
-ROBIE BAZE DANYCH DIET
-W ktorej mam trzy tablice breakfast, lunch i evening
-no i po prostu przez sql zapros dodaje do potrzebnej tablicy potrzebny posilek
-to bok robie w klase db metody add - insert into
-delete
-update
-write
-ale przez inna klasse przekazuje ten zapros(to bok moge w tym drugie zrobic 12 konstandy i przekazywac ich w potrzebnych metodach tej klasy)
- */
