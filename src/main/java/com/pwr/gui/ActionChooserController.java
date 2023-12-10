@@ -34,10 +34,10 @@ public class ActionChooserController {
     private Button listProductButton;
 
     @FXML
-    private SplitMenuButton mealsButton;
+    private SplitMenuButton productMenuButton;
 
     @FXML
-    private SplitMenuButton productMenuButton;
+    private SplitMenuButton mealMenuButton;
 
     @FXML
     void initialize() {
@@ -98,6 +98,39 @@ public class ActionChooserController {
         Stage stage = (Stage) productMenuButton.getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("DietBuilder-DeleteProduct");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    void switchToAddMeal(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AddMealView.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) mealMenuButton.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("DietBuilder-AddMeal");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    void switchToUpdateMeal(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/UpdateMealView.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) mealMenuButton.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("DietBuilder-UpdateMeal");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    void switchToDeleteMeal(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/DeleteMealView.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) mealMenuButton.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("DietBuilder-DeleteMeal");
         stage.setResizable(false);
         stage.show();
     }

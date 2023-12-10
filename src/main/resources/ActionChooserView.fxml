@@ -45,11 +45,11 @@
          </font>
       </Button>
       <Separator layoutX="246.0" layoutY="288.0" prefHeight="25.0" prefWidth="309.0" />
-      <SplitMenuButton fx:id="mealsButton" alignment="CENTER" contentDisplay="RIGHT" layoutX="301.0" layoutY="334.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="199.0" text="Meals">
+      <SplitMenuButton fx:id="mealMenuButton" layoutX="301.0" layoutY="333.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="199.0" text="Meal menu">
         <items>
-          <MenuItem mnemonicParsing="false" text="Go to breakfast" />
-          <MenuItem mnemonicParsing="false" text="Go to lunch" />
-            <MenuItem mnemonicParsing="false" text="Go to dinner" />
+          <MenuItem mnemonicParsing="false" onAction="#switchToAddMeal" text="Add to meal" />
+          <MenuItem mnemonicParsing="false" onAction="#switchToUpdateMeal" text="Update meal" />
+            <MenuItem mnemonicParsing="false" onAction="#switchToDeleteMeal" text="Delete from meal" />
         </items>
          <font>
             <Font size="16.0" />

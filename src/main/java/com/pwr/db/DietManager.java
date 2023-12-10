@@ -47,11 +47,14 @@ public class DietManager implements Breakfast,Lunch,Dinner{
         worker.addProductData(product,"INSERT INTO lunch(name,mass,carbohydrates,fats,protein,category) VALUE(?, ?, ?, ?, ?, ?);");
     }
 
+    /*
     @Override
     public void updateLunch()
     {
         worker.updateProductData("UPDATE_PRODUCT lunch SET;");
     }
+
+     */
 
     @Override
     public void deleteFromLunch()

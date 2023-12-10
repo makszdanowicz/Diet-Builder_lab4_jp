@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -21,5 +23,46 @@
             <Font size="15.0" />
          </font>
       </Button>
+      <Text layoutX="167.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type the name of product, that u would like to update(for example Apple):">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="95.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type your product mass in grams(for example 50):">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="95.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type the amount of carbohydrates, in grams(for example '23'):">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="95.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type the amount of fats, in grams(for example '0'):">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="95.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type the amount of protein, in grams(for example '15'):">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="productNameField" layoutX="293.0" layoutY="136.0" prefHeight="26.0" prefWidth="212.0" />
+      <TextField fx:id="productMassField" layoutX="412.0" layoutY="208.0" prefHeight="25.0" prefWidth="186.0" />
+      <TextField fx:id="productCarbohydratesField" layoutX="480.0" layoutY="245.0" prefHeight="25.0" prefWidth="117.0" />
+      <TextField fx:id="productFatsField" layoutX="412.0" layoutY="287.0" prefHeight="25.0" prefWidth="186.0" />
+      <TextField fx:id="productProteinField" layoutX="435.0" layoutY="329.0" prefHeight="25.0" prefWidth="165.0" />
+      <Button layoutX="338.0" layoutY="375.0" mnemonicParsing="false" onAction="#updateProduct" text="Update Product">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="updateProductLabel" layoutX="339.0" layoutY="444.0" />
+      <Text fill="RED" layoutX="250.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fill in the fiieds to update product:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

@@ -60,9 +60,19 @@ public class DataBase implements InformationWorker{
     }
 
     @Override
-    public void updateProductData(String query)
+    public void updateProductData(double mass, double carbohydrates, double fats, double protein, String name,String query)
     {
-
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setDouble(1,mass);
+            preparedStatement.setDouble(2,carbohydrates);
+            preparedStatement.setDouble(3,fats);
+            preparedStatement.setDouble(4,protein);
+            preparedStatement.setString(5,name);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

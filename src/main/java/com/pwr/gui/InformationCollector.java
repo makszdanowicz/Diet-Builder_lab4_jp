@@ -90,7 +90,7 @@ public class InformationCollector {
             }
             else if(number == 2)
             {
-                manager.updateLunch();
+                //manager.updateLunch();
             }
             else if(number ==3)
             {
