@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataBase implements InformationWorker{
+public class DataBase implements InformationWorker,Meal{
     private final String dbURL = "jdbc:mysql://localhost:3306/diet";
     private final String dbUserName = "root";
     private final String dbPassword = "HelloWorld12345";
@@ -36,7 +36,38 @@ public class DataBase implements InformationWorker{
     }
 
     @Override
-    public List<Product> getProductData(String query)
+    public Product getProductData(String name,String query)
+    {
+        Product product = new Product();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1,name);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next())
+            {
+                String nameDB = resultSet.getString("name");
+                double mass = resultSet.getDouble("mass");
+                double carbohydrates = resultSet.getDouble("carbohydrates");
+                double fats = resultSet.getDouble("fats");
+                double protein = resultSet.getDouble("protein");
+                String category = resultSet.getString("category");
+
+                product.setName(nameDB);
+                product.setMass(mass);
+                product.setCarbohydrates(carbohydrates);
+                product.setFats(fats);
+                product.setProtein(protein);
+                product.setCategory(category);
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return product;
+    }
+
+    @Override
+    public List<Product> getProductsData(String query)
     {
         List<Product> productList = new ArrayList<>();
         try {
@@ -75,8 +106,6 @@ public class DataBase implements InformationWorker{
         }
     }
 
-
-    //Zrobimy ze usuwa po nazwie produktu
     @Override
     public void deleteProductData(String name,String query)
     {
@@ -88,5 +117,34 @@ public class DataBase implements InformationWorker{
             throw new RuntimeException(e);
         }
     }
-    
+
+
+    @Override
+    public void addToMeal(Product product, double amount, String query) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1,product.getName());
+
+            preparedStatement.setDouble(2,product.getMass());
+            preparedStatement.setDouble(3,product.getCarbohydrates());
+            preparedStatement.setDouble(4,product.getFats());
+            preparedStatement.setDouble(5,product.getProtein());
+            preparedStatement.setString(6,product.getCategory());
+            preparedStatement.setDouble(7,amount);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    @Override
+    public void updateMeal(String name, Double amount, String query) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setDouble(1,amount);
+            preparedStatement.setString(2,name);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

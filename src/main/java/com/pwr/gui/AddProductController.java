@@ -69,7 +69,7 @@ public class AddProductController{
         {
             createProductLabel.setText("Product was created");
 
-            Product product = new Product(name,Double.valueOf(mass),Double.valueOf(carbohydrates),Double.valueOf(fats),Double.valueOf(protein),category);
+            Product product = new Product(name,Double.parseDouble(mass),Double.parseDouble(carbohydrates),Double.parseDouble(fats),Double.parseDouble(protein),category);
             DataBase dbWorker = new DataBase();
             dbWorker.addProductData(product,"INSERT INTO products(name,mass,carbohydrates,fats,protein,category) VALUE(?, ?, ?, ?, ?, ?);");
         }

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #E7E7E7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pwr.gui.AddMealController">
    <children>
@@ -17,7 +20,32 @@
             </Text>
          </children>
       </AnchorPane>
-      <Text layoutX="102.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type the name:" />
-      <TextField fx:id="productNameField" layoutX="198.0" layoutY="150.0" />
+      <Text layoutX="101.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type the name of product that u would like to add:">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <TextField fx:id="productNameField" layoutX="423.0" layoutY="147.0" prefHeight="26.0" prefWidth="210.0" />
+      <Text layoutX="101.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type the amount(for example 3 or 0.5):">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="amountField" layoutX="348.0" layoutY="190.0" />
+      <SplitMenuButton layoutX="318.0" layoutY="245.0" mnemonicParsing="false" text="Add to">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#addToBreakfast" text="Breakfast" />
+          <MenuItem mnemonicParsing="false" onAction="#addToLunch" text="Lunch" />
+            <MenuItem mnemonicParsing="false" onAction="#addToDinner" text="Dinner" />
+        </items>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </SplitMenuButton>
+      <Button layoutX="99.0" layoutY="526.0" mnemonicParsing="false" onAction="#switchToMenu" text="Back to Menu">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="addMealLabel" layoutX="297.0" layoutY="292.0" textFill="RED" />
    </children>
 </AnchorPane>

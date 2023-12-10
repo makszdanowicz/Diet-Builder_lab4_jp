@@ -63,7 +63,7 @@ public class UpdateProductController {
         if(!name.equals(""))
         {
             DataBase dbWorker = new DataBase();
-            dbWorker.updateProductData(Double.valueOf(mass),Double.valueOf(carbohydrates),Double.valueOf(fats),Double.valueOf(protein),name,"UPDATE products SET mass = ?, carbohydrates = ?, fats = ?, protein = ? WHERE name = ?;");
+            dbWorker.updateProductData(Double.parseDouble(mass),Double.parseDouble(carbohydrates),Double.parseDouble(fats),Double.parseDouble(protein),name,"UPDATE products SET mass = ?, carbohydrates = ?, fats = ?, protein = ? WHERE name = ?;");
         }
         updateProductLabel.setText("Product was updated");
         System.out.println("Your product is: " + name + " " +  mass + "g with: " + "carbohydrates" + carbohydrates + "g " +

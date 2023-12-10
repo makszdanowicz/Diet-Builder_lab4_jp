@@ -2,7 +2,7 @@ package com.pwr.db;
 
 import com.pwr.gui.InformationCollector;
 
-public class DietManager implements Breakfast,Lunch,Dinner{
+public class DietManager implements Lunch,Dinner{
     private InformationWorker worker;
     private InformationCollector collector = new InformationCollector();
     public DietManager(InformationWorker worker)
@@ -21,19 +21,19 @@ public class DietManager implements Breakfast,Lunch,Dinner{
         Product product = new Product(name,mass,carbohydrates,fats,protein,category);
         return product;
     }
-    @Override
+
     public void addToBreakfast()
     {
         Product product = addProduct();
         worker.addProductData(product,"INSERT INTO breakfast(name,mass,carbohydrates,fats,protein,category) VALUE(?, ?, ?, ?, ?, ?);");
     }
-    @Override
+
     public void updateBreakfast()
     {
 
     }
 
-    @Override
+
     public void deleteFromBreakfast()
     {
         String name = collector.getName();

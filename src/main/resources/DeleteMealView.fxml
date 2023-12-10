@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #E7E7E7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #E7E7E7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pwr.gui.DeleteMealController">
    <children>
-      <AnchorPane layoutX="6.0" prefHeight="64.0" prefWidth="800.0" style="-fx-background-color: #AACFE3;">
+      <AnchorPane layoutX="-11.0" prefHeight="64.0" prefWidth="811.0" style="-fx-background-color: #AACFE3;">
          <children>
             <Text layoutX="339.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Meal">
                <font>
@@ -16,5 +20,27 @@
             </Text>
          </children>
       </AnchorPane>
+      <Text layoutX="188.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type the name of product that u would like to delete:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <SplitMenuButton layoutX="331.0" layoutY="282.0" mnemonicParsing="false" text="Delete from">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#deleteFromBreakfast" text="Breakfast" />
+          <MenuItem mnemonicParsing="false" onAction="#deleteFromLunch" text="Lunch" />
+            <MenuItem mnemonicParsing="false" onAction="#deleteFromDinner" text="Dinner" />
+        </items>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </SplitMenuButton>
+      <TextField fx:id="productNameField" layoutX="263.0" layoutY="176.0" prefHeight="26.0" prefWidth="277.0" />
+      <Button layoutX="99.0" layoutY="526.0" mnemonicParsing="false" onAction="#switchToMenu" text="Back to Menu">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="deleteMealLabel" layoutX="303.0" layoutY="331.0" textFill="RED" />
    </children>
 </AnchorPane>

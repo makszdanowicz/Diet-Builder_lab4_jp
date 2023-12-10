@@ -7,6 +7,10 @@ public class Product {
     private double fats;
     private double protein;
     private String category;
+    public Product()
+    {
+        System.out.println("ERROR");
+    }
 
     public Product(String name, double mass, double carbohydrates, double fats, double protein, String category)
     {
