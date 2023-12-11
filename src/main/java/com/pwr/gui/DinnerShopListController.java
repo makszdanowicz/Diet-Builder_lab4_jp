@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import com.pwr.db.CaloriesCounter;
 import com.pwr.db.DataBase;
 import com.pwr.db.Product;
 import javafx.event.ActionEvent;
@@ -37,13 +38,15 @@ public class DinnerShopListController {
     void getContent(ActionEvent event) {
         DataBase dbWorker = new DataBase();
         Map<Product,Double> dinner = dbWorker.getMealData("SELECT * FROM dinner;");
-        textArea.appendText("LUNCH SHOP LIST");
+        textArea.appendText("DINNER SHOP LIST");
         textArea.appendText("\n");
         textArea.appendText("Products:");
         textArea.appendText("\n");
         for(Map.Entry<Product,Double> entry : dinner.entrySet())
         {
-            textArea.appendText(entry.getKey().getName() + " (" + entry.getKey().getMass() + "g) " + "x " + entry.getValue().toString());
+            CaloriesCounter caloriesCounter = new CaloriesCounter();
+            double calories = caloriesCounter.countCaloriesInProduct(entry.getKey().getCarbohydrates(),entry.getKey().getFats(),entry.getKey().getProtein(),entry.getValue());
+            textArea.appendText(entry.getKey().getName() + " (" + entry.getKey().getMass() + "g) " + "x " + entry.getValue().toString() + " | Calories (" + calories + "cal)");
             textArea.appendText("\n");
         }
     }
