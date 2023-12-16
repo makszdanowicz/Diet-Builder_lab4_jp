@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #E7E7E7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pwr.gui.MainViewController">
    <children>
-      <Button fx:id="launchAppButton" layoutX="335.0" layoutY="261.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="130.0" text="Launch">
+      <Button fx:id="launchAppButton" layoutX="335.0" layoutY="261.0" mnemonicParsing="false" onAction="#switchToInstruction" prefHeight="39.0" prefWidth="130.0" text="Launch">
          <font>
             <Font size="18.0" />
          </font>
