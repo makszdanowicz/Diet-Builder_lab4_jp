@@ -1,9 +1,6 @@
 package com.pwr.gui;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -21,6 +18,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.w3c.dom.Document;
 
 public class BreakfastShopListController {
 
@@ -53,7 +51,7 @@ public class BreakfastShopListController {
         }
     }
     @FXML
-    void saveToPdf(MouseEvent event) {
+    void saveToFile(MouseEvent event) {
         File file = fileChooser.showSaveDialog(new Stage());
         if(file != null)
         {
@@ -70,6 +68,19 @@ public class BreakfastShopListController {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @FXML
+    void saveToPdf(MouseEvent event) throws FileNotFoundException, DocumentException {
+        Document document = new Document();
+        PdfWriter.getInstance(document,new FileOutputStream("BreakfastShopList.pdf"));
+
+        document.open();
+        String textFromTextArea = textArea.getText();
+        Paragraph paragraph = new Paragraph(textFromTextArea);
+        document.add(paragraph);
+        System.out.println(textFromTextArea);
+        document.close();
     }
 
     @FXML

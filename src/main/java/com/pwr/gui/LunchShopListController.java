@@ -53,7 +53,7 @@ public class LunchShopListController {
     }
 
     @FXML
-    void saveToPdf(MouseEvent event) {
+    void saveToFile(MouseEvent event) {
         File file = fileChooser.showSaveDialog(new Stage());
         if(file != null)
         {
@@ -71,6 +71,7 @@ public class LunchShopListController {
             throw new RuntimeException(e);
         }
     }
+
 
     @FXML
     void switchToMenu(ActionEvent event) throws IOException {

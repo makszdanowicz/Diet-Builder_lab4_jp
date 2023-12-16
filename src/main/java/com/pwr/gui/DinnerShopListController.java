@@ -52,7 +52,7 @@ public class DinnerShopListController {
     }
 
     @FXML
-    void saveToPdf(MouseEvent event) {
+    void saveToFile(MouseEvent event) {
         File file = fileChooser.showSaveDialog(new Stage());
         if(file != null)
         {
