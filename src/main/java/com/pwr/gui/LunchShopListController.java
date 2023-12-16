@@ -1,13 +1,14 @@
 package com.pwr.gui;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.pwr.db.CaloriesCounter;
 import com.pwr.db.DataBase;
 import com.pwr.db.Product;
@@ -21,6 +22,12 @@ import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.font.*;
+
+import static com.itextpdf.text.FontFactory.COURIER;
 
 public class LunchShopListController {
 
@@ -53,25 +60,17 @@ public class LunchShopListController {
     }
 
     @FXML
-    void saveToPdf(MouseEvent event) {
-        File file = fileChooser.showSaveDialog(new Stage());
-        if(file != null)
-        {
-            saveSystem(file, textArea.getText());
-        }
-    }
+    void saveToPdf(MouseEvent event) throws IOException, DocumentException {
+        Document document = new Document();
+        PdfWriter.getInstance(document,new FileOutputStream("LunchShopList.pdf"));
 
-    public void saveSystem(File file, String content)
-    {
-        try {
-            PrintWriter printWriter = new PrintWriter(file);
-            printWriter.write(content);
-            printWriter.close();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        document.open();
+        String textFromTextArea = textArea.getText();
+        Paragraph paragraph = new Paragraph(textFromTextArea);
+        document.add(paragraph);
+        System.out.println(textFromTextArea);
+        document.close();
     }
-
     @FXML
     void switchToMenu(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ActionChooserView.fxml"));

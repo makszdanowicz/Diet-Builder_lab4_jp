@@ -39,9 +39,15 @@ public class UpdateMealController {
         String amount = newAmountField.getText();
         if(!name.equals("") && !amount.equals(""))
         {
-            DataBase dbWorker = new DataBase();
-            dbWorker.updateMeal(name,Double.parseDouble(amount),"UPDATE breakfast SET amount = ? WHERE name = ?;");
-            updateInfoLabel.setText("Product was updated to breakfast");
+            try{
+                DataBase dbWorker = new DataBase();
+                dbWorker.updateMeal(name,Double.parseDouble(amount),"UPDATE breakfast SET amount = ? WHERE name = ?;");
+                updateInfoLabel.setText("Product was updated to breakfast");
+            }
+            catch (NumberFormatException exception)
+            {
+                updateInfoLabel.setText("Please provide number!");
+            }
         }
         else {
             updateInfoLabel.setText("ERROR.You have empty fields");
@@ -55,9 +61,16 @@ public class UpdateMealController {
         String amount = newAmountField.getText();
         if(!name.equals("") && !amount.equals(""))
         {
-            DataBase dbWorker = new DataBase();
-            dbWorker.updateMeal(name,Double.parseDouble(amount),"UPDATE lunch SET amount = ? WHERE name = ?;");
-            updateInfoLabel.setText("Product was updated to lunch");
+            try{
+                Double.parseDouble(amount);
+                DataBase dbWorker = new DataBase();
+                dbWorker.updateMeal(name,Double.parseDouble(amount),"UPDATE lunch SET amount = ? WHERE name = ?;");
+                updateInfoLabel.setText("Product was updated to lunch");
+            }
+            catch (NumberFormatException e)
+            {
+                updateInfoLabel.setText("Please provide number!");
+            }
         }
         else {
             updateInfoLabel.setText("ERROR.You have empty fields");
@@ -71,9 +84,16 @@ public class UpdateMealController {
         String amount = newAmountField.getText();
         if(!name.equals("") && !amount.equals(""))
         {
-            DataBase dbWorker = new DataBase();
-            dbWorker.updateMeal(name,Double.parseDouble(amount),"UPDATE breakfast SET amount = ? WHERE name = ?;");
-            updateInfoLabel.setText("Product was updated to dinner");
+            try{
+                Double.parseDouble(amount);
+                DataBase dbWorker = new DataBase();
+                dbWorker.updateMeal(name,Double.parseDouble(amount),"UPDATE breakfast SET amount = ? WHERE name = ?;");
+                updateInfoLabel.setText("Product was updated to dinner");
+            }
+            catch (NumberFormatException e)
+            {
+                updateInfoLabel.setText("Please provide number!");
+            }
         }
         else {
             updateInfoLabel.setText("ERROR.You have empty fields");

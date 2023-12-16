@@ -25,11 +25,6 @@ public class InformationController {
     private Button menuButton;
 
     @FXML
-    void initialize() {
-        //
-    }
-
-    @FXML
     void switchToMenu(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ActionChooserView.fxml"));
@@ -40,16 +35,6 @@ public class InformationController {
         appStage.setResizable(false);
         appStage.show();
 
-
-        /*
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ActionChooserView.fxml"));
-        Parent root = loader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("DietBuilder-Menu");
-        stage.setResizable(false);
-        stage.showAndWait();
-        */
     }
 
 }
