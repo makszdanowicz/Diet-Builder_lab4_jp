@@ -81,6 +81,7 @@ public class LunchShopListController {
         document.open();
         String textFromTextArea = textArea.getText();
         Paragraph paragraph = new Paragraph(textFromTextArea);
+        paragraph.setAlignment(Paragraph.ALIGN_CENTER);
         document.add(paragraph);
 
         document.close();

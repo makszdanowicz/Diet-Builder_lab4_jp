@@ -33,7 +33,7 @@ public class DataBase implements InformationWorker,Meal{
             preparedStatement.setString(6,product.getCategory());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.out.println("Can not add Product to DataBase" + e.getMessage());
         }
     }
 
@@ -63,7 +63,7 @@ public class DataBase implements InformationWorker,Meal{
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.out.println("Can not get Data of Product from DataBase" + e.getMessage());
         }
         return product;
     }
@@ -87,7 +87,7 @@ public class DataBase implements InformationWorker,Meal{
                 productList.add(new Product(name,mass,carbohydrates,fats,protein,category));
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.out.println("Can not get Products Data from DataBase" + e.getMessage());
         }
         return productList;
     }
@@ -104,7 +104,7 @@ public class DataBase implements InformationWorker,Meal{
             preparedStatement.setString(5,name);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.out.println("Can not update Product to DataBase" + e.getMessage());
         }
     }
 
@@ -116,7 +116,7 @@ public class DataBase implements InformationWorker,Meal{
             preparedStatement.setString(1,name);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.out.println("Can not delete Product from DataBase" + e.getMessage());
         }
     }
 
@@ -135,7 +135,7 @@ public class DataBase implements InformationWorker,Meal{
             preparedStatement.setDouble(7,amount);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.out.println("Can not add Meal to DataBase" + e.getMessage());
         }
     }
     @Override
@@ -146,7 +146,7 @@ public class DataBase implements InformationWorker,Meal{
             preparedStatement.setString(2,name);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.out.println("Can not update Meal to DataBase" + e.getMessage());
         }
     }
 
@@ -169,7 +169,7 @@ public class DataBase implements InformationWorker,Meal{
                 meal.put(new Product(name,mass,carbohydrates,fats,protein,category),amount);
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.out.println("Can not get Meal Data from DataBase" + e.getMessage());
         }
         return meal;
 
