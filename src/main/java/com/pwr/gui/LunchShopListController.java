@@ -1,13 +1,14 @@
 package com.pwr.gui;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.pwr.db.CaloriesCounter;
 import com.pwr.db.DataBase;
 import com.pwr.db.Product;
@@ -53,7 +54,7 @@ public class LunchShopListController {
     }
 
     @FXML
-    void saveToFile(MouseEvent event) {
+    void saveToFile(ActionEvent event) {
         File file = fileChooser.showSaveDialog(new Stage());
         if(file != null)
         {
@@ -70,6 +71,19 @@ public class LunchShopListController {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @FXML
+    void saveToPdf(ActionEvent event) throws FileNotFoundException, DocumentException {
+        Document document = new Document();
+        PdfWriter.getInstance(document,new FileOutputStream("LunchShopList.pdf"));
+
+        document.open();
+        String textFromTextArea = textArea.getText();
+        Paragraph paragraph = new Paragraph(textFromTextArea);
+        document.add(paragraph);
+
+        document.close();
     }
 
 

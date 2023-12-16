@@ -5,6 +5,10 @@ import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.pwr.db.CaloriesCounter;
 import com.pwr.db.DataBase;
 import com.pwr.db.Product;
@@ -18,7 +22,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import org.w3c.dom.Document;
 
 public class BreakfastShopListController {
 
@@ -51,7 +54,7 @@ public class BreakfastShopListController {
         }
     }
     @FXML
-    void saveToFile(MouseEvent event) {
+    void saveToFile(ActionEvent event) {
         File file = fileChooser.showSaveDialog(new Stage());
         if(file != null)
         {
@@ -71,7 +74,7 @@ public class BreakfastShopListController {
     }
 
     @FXML
-    void saveToPdf(MouseEvent event) throws FileNotFoundException, DocumentException {
+    void saveToPdf(ActionEvent event) throws FileNotFoundException, DocumentException {
         Document document = new Document();
         PdfWriter.getInstance(document,new FileOutputStream("BreakfastShopList.pdf"));
 
@@ -79,7 +82,6 @@ public class BreakfastShopListController {
         String textFromTextArea = textArea.getText();
         Paragraph paragraph = new Paragraph(textFromTextArea);
         document.add(paragraph);
-        System.out.println(textFromTextArea);
         document.close();
     }
 
