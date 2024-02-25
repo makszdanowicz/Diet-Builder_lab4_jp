@@ -48,3 +48,6 @@ Produkty:
 ```
 * Każdy posiłek powinen prezentować sumaryczną ilość przyjętych makroskładników oraz obliczać ilość kalorii (dynamicznie na podstawie makroskładników),
 * Użytkownik ma możliwość wygenerowania ***listy zakupów*** dla określonych posiłków w formacie PDF. Produkty powinne być scalone oraz pogrupowane per kategoria (np. jeśli `banan` występował w kilku posiłkach, na liście zakupów powinien widnieć tylko jeden wpis w kategorii `Owoce`). 
+
+# Credits
+[Strona Pana Doktora Tomasza Kozłowskiego](https://khozzy.notion.site/Laboratorium-4-GUI-Swing-JavaFX-87aee7ba695448a09f85f65f16dd5d1a)
