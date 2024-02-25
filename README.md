@@ -1,4 +1,4 @@
-:no_entry::no_entry::no_entry:***Working version of projects is availaible on branch*** **pdf_saver_version**
+:no_entry::no_entry::no_entry:***Working version of projects is availaible on branch*** - `pdf_saver_version`
 
 ## Treść programowa
 Zaprojektowanie i implementacja aplikacji z graficznym interfejsem użytkownika (z wykorzystaniem podstawowych komponentów do budowy formularzy).
@@ -37,13 +37,13 @@ Banan (100g):
 
 Nazwa: Lunch
 Produkty:
-	- Bułka (100g) x 2
-  - Szynka (plaster) x 2
-  - Masło (5g) x 4
+- Bułka (100g) x 2
+- Szynka (plaster) x 2
+- Masło (5g) x 4
 
 Nazwa: Podwieczorek v3
 Produkty:
-  - Banan (100g) x 0.5
+- Banan (100g) x 0.5
 
 ```
 * Każdy posiłek powinen prezentować sumaryczną ilość przyjętych makroskładników oraz obliczać ilość kalorii (dynamicznie na podstawie makroskładników),
