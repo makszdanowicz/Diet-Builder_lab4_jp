@@ -20,7 +20,7 @@ Niezależnie od wykorzystanej technologi aplikacja powinna być umieszczona w po
 Dodatkowo potrzebna okaże się umiejętność dołączenia zewnętrznych plików JAR (np. do tworzenia PDF lub generowania wizualizacji).
 
 
-## Grupa B
+## Projekt treść (Grupa B)
 Celem projektu jest stworzenie aplikacji typu Diet Builder posiadających następujące funkcjonalności:
 * użytkownik może dodawać, edytować i usuwać pojedyncze ***produkty*** definiując ich metadane, np.
 ```bash
