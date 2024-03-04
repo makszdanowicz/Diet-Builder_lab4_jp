@@ -1,4 +1,4 @@
-:no_entry::no_entry::no_entry:***Working version of projects is availaible on branch*** - `pdf_saver_version`
+:no_entry:***Working version of projects is availaible on branch*** - `pdf_saver_version`
 
 ## Treść programowa
 Zaprojektowanie i implementacja aplikacji z graficznym interfejsem użytkownika (z wykorzystaniem podstawowych komponentów do budowy formularzy).
