@@ -42,6 +42,7 @@
   </dependencies>
 
   <build>
+    <finalName>DietBuilderJAR</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -57,6 +58,18 @@
         <version>${javafx.maven.plugin.version}</version>
         <configuration>
           <mainClass>com.pwr.Main</mainClass>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>com.pwr.Main</mainClass>
+            </manifest>
+          </archive>
         </configuration>
       </plugin>
     </plugins>

@@ -64,19 +64,27 @@ public class AddProductController{
         String protein = productProteinField.getText();
         String fats = productFatsField.getText();
         String category = productCategoryField.getText();
-        System.out.println("Product was created successfully");
         if(!name.equals("") && !mass.equals("") && !carbohydrates.equals("") && !protein.equals("") && !fats.equals("") && !category.equals(""))
         {
-            createProductLabel.setText("Product was created");
-
-            Product product = new Product(name,Double.parseDouble(mass),Double.parseDouble(carbohydrates),Double.parseDouble(fats),Double.parseDouble(protein),category);
-            DataBase dbWorker = new DataBase();
-            dbWorker.addProductData(product,"INSERT INTO products(name,mass,carbohydrates,fats,protein,category) VALUE(?, ?, ?, ?, ?, ?);");
+            try{
+                Double.parseDouble(mass);
+                Double.parseDouble(carbohydrates);
+                Double.parseDouble(fats);
+                Double.parseDouble(protein);
+                createProductLabel.setText("Product was created");
+                Product product = new Product(name,Double.parseDouble(mass),Double.parseDouble(carbohydrates),Double.parseDouble(fats),Double.parseDouble(protein),category);
+                DataBase dbWorker = new DataBase();
+                dbWorker.addProductData(product,"INSERT INTO products(name,mass,carbohydrates,fats,protein,category) VALUE(?, ?, ?, ?, ?, ?);");
+            }
+            catch(NumberFormatException e)
+            {
+                System.out.println("Entered value is not a number!" + e.getMessage());
+                createProductLabel.setText("Please provide numbers like in example!");
+            }
         }
         else {
             createProductLabel.setText("You have empty fields!");
         }
-        //createProductLabel.setText("Product was created");
         System.out.println("Your product is: " + name + " " +  mass + "g with: " + "carbohydrates" + carbohydrates + "g " +
                 "protein" + protein +"g" + " fats" + fats + "g " + "CATEGORY - " + category);
     }

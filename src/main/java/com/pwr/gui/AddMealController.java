@@ -39,10 +39,18 @@ public class AddMealController {
         String amount = amountField.getText();
         if(!name.equals("") && !amount.equals(""))
         {
-            DataBase dbWorker = new DataBase();
-            Product product = dbWorker.getProductData(name,"SELECT * FROM products WHERE name = ?;");
-            dbWorker.addToMeal(product,Double.parseDouble(amount),"INSERT INTO breakfast(name,mass,carbohydrates,fats,protein,category,amount) VALUE(?, ?, ?, ?, ?, ?, ?);");
-            addMealLabel.setText("Product was added to breakfast");
+            try{
+                Double.parseDouble(amount);
+                DataBase dbWorker = new DataBase();
+                Product product = dbWorker.getProductData(name,"SELECT * FROM products WHERE name = ?;");
+                dbWorker.addToMeal(product,Double.parseDouble(amount),"INSERT INTO breakfast(name,mass,carbohydrates,fats,protein,category,amount) VALUE(?, ?, ?, ?, ?, ?, ?);");
+                addMealLabel.setText("Product was added to breakfast");
+            }
+            catch (NumberFormatException e)
+            {
+                System.out.println("Entered value is not a number!" + e.getMessage());
+                addMealLabel.setText("Please provide numbers like in example!");
+            }
         }
         else
         {
@@ -57,10 +65,19 @@ public class AddMealController {
         String amount = amountField.getText();
         if(!name.equals("") && !amount.equals(""))
         {
-            DataBase dbWorker = new DataBase();
-            Product product = dbWorker.getProductData(name,"SELECT * FROM products WHERE name = ?;");
-            dbWorker.addToMeal(product,Double.parseDouble(amount),"INSERT INTO lunch(name,mass,carbohydrates,fats,protein,category,amount) VALUE(?, ?, ?, ?, ?, ?, ?);");
-            addMealLabel.setText("Product was added to lunch");
+            try{
+                Double.parseDouble(amount);
+                DataBase dbWorker = new DataBase();
+                Product product = dbWorker.getProductData(name,"SELECT * FROM products WHERE name = ?;");
+                dbWorker.addToMeal(product,Double.parseDouble(amount),"INSERT INTO lunch(name,mass,carbohydrates,fats,protein,category,amount) VALUE(?, ?, ?, ?, ?, ?, ?);");
+                addMealLabel.setText("Product was added to lunch");
+            }
+            catch (NumberFormatException e)
+            {
+                System.out.println("Entered value is not a number!" + e.getMessage());
+                addMealLabel.setText("Please provide numbers like in example!");
+            }
+
         }
         else
         {
@@ -75,10 +92,19 @@ public class AddMealController {
         String amount = amountField.getText();
         if(!name.equals("") && !amount.equals(""))
         {
-            DataBase dbWorker = new DataBase();
-            Product product = dbWorker.getProductData(name,"SELECT * FROM products WHERE name = ?;");
-            dbWorker.addToMeal(product,Double.parseDouble(amount),"INSERT INTO dinner(name,mass,carbohydrates,fats,protein,category,amount) VALUE(?, ?, ?, ?, ?, ?, ?);");
-            addMealLabel.setText("Product was added to dinner");
+            try{
+                Double.parseDouble(amount);
+                DataBase dbWorker = new DataBase();
+                Product product = dbWorker.getProductData(name,"SELECT * FROM products WHERE name = ?;");
+                dbWorker.addToMeal(product,Double.parseDouble(amount),"INSERT INTO dinner(name,mass,carbohydrates,fats,protein,category,amount) VALUE(?, ?, ?, ?, ?, ?, ?);");
+                addMealLabel.setText("Product was added to dinner");
+            }
+            catch (NumberFormatException e)
+            {
+                System.out.println("Entered value is not a number!" + e.getMessage());
+                addMealLabel.setText("Please provide numbers like in example!");
+            }
+
         }
         else
         {

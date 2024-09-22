@@ -62,10 +62,22 @@ public class UpdateProductController {
         String fats = productFatsField.getText();
         if(!name.equals(""))
         {
-            DataBase dbWorker = new DataBase();
-            dbWorker.updateProductData(Double.parseDouble(mass),Double.parseDouble(carbohydrates),Double.parseDouble(fats),Double.parseDouble(protein),name,"UPDATE products SET mass = ?, carbohydrates = ?, fats = ?, protein = ? WHERE name = ?;");
+            try{
+                Double.parseDouble(mass);
+                Double.parseDouble(carbohydrates);
+                Double.parseDouble(fats);
+                Double.parseDouble(protein);
+                DataBase dbWorker = new DataBase();
+                dbWorker.updateProductData(Double.parseDouble(mass),Double.parseDouble(carbohydrates),Double.parseDouble(fats),Double.parseDouble(protein),name,"UPDATE products SET mass = ?, carbohydrates = ?, fats = ?, protein = ? WHERE name = ?;");
+                updateProductLabel.setText("Product was updated");
+            }
+            catch (NumberFormatException e)
+            {
+                System.out.println("Entered value is not a number!" + e.getMessage());
+                updateProductLabel.setText("Please provide numbers like in example!");
+            }
         }
-        updateProductLabel.setText("Product was updated");
+
         System.out.println("Your product is: " + name + " " +  mass + "g with: " + "carbohydrates" + carbohydrates + "g " +
                 "protein" + protein +"g" + " fats" + fats + "g ");
     }

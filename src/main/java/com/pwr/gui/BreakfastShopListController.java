@@ -5,9 +5,8 @@ import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Paragraph;
+
+import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.pwr.db.CaloriesCounter;
 import com.pwr.db.DataBase;
@@ -23,6 +22,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+
 public class BreakfastShopListController {
 
     @FXML
@@ -33,8 +33,6 @@ public class BreakfastShopListController {
 
     @FXML
     private TextArea textArea;
-
-    FileChooser fileChooser = new FileChooser();
 
     @FXML
     void getContent(ActionEvent event)
@@ -54,35 +52,15 @@ public class BreakfastShopListController {
         }
     }
     @FXML
-    void saveToFile(ActionEvent event) {
-        File file = fileChooser.showSaveDialog(new Stage());
-        if(file != null)
-        {
-            saveSystem(file, textArea.getText());
-        }
-    }
-
-    public void saveSystem(File file, String content)
-    {
-        try {
-            PrintWriter printWriter = new PrintWriter(file);
-            printWriter.write(content);
-            printWriter.close();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    void saveToPdf(ActionEvent event) throws FileNotFoundException, DocumentException {
+    void saveToPdf(MouseEvent event) throws FileNotFoundException, DocumentException {
         Document document = new Document();
         PdfWriter.getInstance(document,new FileOutputStream("BreakfastShopList.pdf"));
 
         document.open();
         String textFromTextArea = textArea.getText();
         Paragraph paragraph = new Paragraph(textFromTextArea);
-        paragraph.setAlignment(Paragraph.ALIGN_CENTER);
         document.add(paragraph);
+        System.out.println(textFromTextArea);
         document.close();
     }
 

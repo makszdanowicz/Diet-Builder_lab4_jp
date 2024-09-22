@@ -53,34 +53,14 @@ public class DinnerShopListController {
     }
 
     @FXML
-    void saveToFile(MouseEvent event) {
-        File file = fileChooser.showSaveDialog(new Stage());
-        if(file != null)
-        {
-            saveSystem(file, textArea.getText());
-        }
-    }
-    public void saveSystem(File file, String content)
-    {
-        try {
-            PrintWriter printWriter = new PrintWriter(file);
-            printWriter.write(content);
-            printWriter.close();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    void saveToPdf(ActionEvent event) throws FileNotFoundException, DocumentException {
+    void saveToPdf(MouseEvent event) throws FileNotFoundException, DocumentException {
         Document document = new Document();
         PdfWriter.getInstance(document,new FileOutputStream("DinnerShopList.pdf"));
-
         document.open();
         String textFromTextArea = textArea.getText();
         Paragraph paragraph = new Paragraph(textFromTextArea);
-        paragraph.setAlignment(Paragraph.ALIGN_CENTER);
         document.add(paragraph);
+        System.out.println(textFromTextArea);
         document.close();
     }
 

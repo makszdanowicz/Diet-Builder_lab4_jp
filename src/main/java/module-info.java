@@ -4,6 +4,7 @@ module Lab4 {
     requires javafx.fxml;
     requires java.sql;
     requires itextpdf;
+    requires org.apache.pdfbox;
 
     opens com.pwr;
     opens com.pwr.gui;

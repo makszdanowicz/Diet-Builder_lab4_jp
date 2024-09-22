@@ -22,6 +22,12 @@ import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.font.*;
+
+import static com.itextpdf.text.FontFactory.COURIER;
 
 public class LunchShopListController {
 
@@ -54,39 +60,16 @@ public class LunchShopListController {
     }
 
     @FXML
-    void saveToFile(ActionEvent event) {
-        File file = fileChooser.showSaveDialog(new Stage());
-        if(file != null)
-        {
-            saveSystem(file, textArea.getText());
-        }
-    }
-
-    public void saveSystem(File file, String content)
-    {
-        try {
-            PrintWriter printWriter = new PrintWriter(file);
-            printWriter.write(content);
-            printWriter.close();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    void saveToPdf(ActionEvent event) throws FileNotFoundException, DocumentException {
+    void saveToPdf(MouseEvent event) throws IOException, DocumentException {
         Document document = new Document();
-        PdfWriter.getInstance(document,new FileOutputStream("LunchShopList.pdf"));
 
         document.open();
         String textFromTextArea = textArea.getText();
         Paragraph paragraph = new Paragraph(textFromTextArea);
-        paragraph.setAlignment(Paragraph.ALIGN_CENTER);
         document.add(paragraph);
-
+        System.out.println(textFromTextArea);
         document.close();
     }
-
 
     @FXML
     void switchToMenu(ActionEvent event) throws IOException {
