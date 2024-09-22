@@ -9,7 +9,7 @@ Diet Builder to aplikacja z graficznym interfejsem użytkownika, która umożliw
 ## Spis treści
 
  - [Funkcjonalność](#funkcjonalość)
- - [Instalacja i uruchimenie aplikacja](#instalacja)
+ - [Instalacja i uruchomenie aplikacji](#instalacja)
  - [Interface aplikacji](#interface)
  - [Kontakt](#kontakt)
 
