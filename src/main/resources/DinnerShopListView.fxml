@@ -18,7 +18,7 @@
          </children>
       </AnchorPane>
       <TextArea fx:id="textArea" layoutX="220.0" layoutY="138.0" prefHeight="360.0" prefWidth="359.0" />
-      <Button layoutX="252.0" layoutY="516.0" mnemonicParsing="false" onMouseClicked="#saveToFile" text="Save to file ">
+      <Button layoutX="345.0" layoutY="514.0" mnemonicParsing="false" onMouseClicked="#saveToPdf" text="Save to file ">
          <font>
             <Font size="16.0" />
          </font>
@@ -27,11 +27,6 @@
       <Button layoutX="27.0" layoutY="519.0" mnemonicParsing="false" onAction="#switchToMenu" text="Back to menu">
          <font>
             <Font size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="450.0" layoutY="516.0" mnemonicParsing="false" onAction="#saveToPdf" text="Save to pdf ">
-         <font>
-            <Font size="16.0" />
          </font>
       </Button>
    </children>

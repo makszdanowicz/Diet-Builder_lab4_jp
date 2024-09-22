@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
@@ -32,11 +33,11 @@
       </Text>
       <TextField fx:id="amountField" layoutX="348.0" layoutY="190.0" />
       <SplitMenuButton layoutX="318.0" layoutY="245.0" mnemonicParsing="false" text="Add to">
-        <items>
-          <MenuItem mnemonicParsing="false" onAction="#addToBreakfast" text="Breakfast" />
-          <MenuItem mnemonicParsing="false" onAction="#addToLunch" text="Lunch" />
+         <items>
+            <MenuItem mnemonicParsing="false" onAction="#addToBreakfast" text="Breakfast" />
+            <MenuItem mnemonicParsing="false" onAction="#addToLunch" text="Lunch" />
             <MenuItem mnemonicParsing="false" onAction="#addToDinner" text="Dinner" />
-        </items>
+         </items>
          <font>
             <Font size="15.0" />
          </font>
