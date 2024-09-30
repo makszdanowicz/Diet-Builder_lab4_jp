@@ -8,4 +8,5 @@ module Lab4 {
 
     opens com.pwr;
     opens com.pwr.gui;
+    opens com.pwr.db;
 }

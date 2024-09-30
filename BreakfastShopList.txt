@@ -1,5 +1,0 @@
-BREAKFAST SHOP LIST
-Products:
-Eggs (100.0g) x 1.0 | Calories (344.0cal)
-Apple (15.0g) x 3.0 | Calories (246.0cal)
-Banan (24.0g) x 2.0 | Calories (120.0cal)

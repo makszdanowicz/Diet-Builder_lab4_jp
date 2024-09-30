@@ -62,6 +62,7 @@ public class LunchShopListController {
     @FXML
     void saveToPdf(MouseEvent event) throws IOException, DocumentException {
         Document document = new Document();
+        PdfWriter.getInstance(document,new FileOutputStream("LunchShopList.pdf"));
 
         document.open();
         String textFromTextArea = textArea.getText();

@@ -16,7 +16,7 @@
 
 ---------------  S U M M A R Y ------------
 
-Command Line: -javaagent:D:\IntellijIDEA\IntelliJ IDEA 2023.1\lib\idea_rt.jar=58697:D:\IntellijIDEA\IntelliJ IDEA 2023.1\bin -Dfile.encoding=UTF-8 --module-path=C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-graphics\17.0.1\javafx-graphics-17.0.1-win.jar;C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-controls\17.0.1\javafx-controls-17.0.1-win.jar;C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-base\17.0.1\javafx-base-17.0.1-win.jar;D:\IntellijIDEA\JP_Java\Lab4\target\classes;C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-fxml\17.0.1\javafx-fxml-17.0.1-win.jar -Djdk.module.main=Lab4 Lab4/com.pwr.Main
+Command Line: -javaagent:D:\IntellijIDEA\IntelliJ IDEA 2023.1\lib\idea_rt.jar=58697:D:\IntellijIDEA\IntelliJ IDEA 2023.1\bin -Dfile.encoding=UTF-8 --module-path=C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-graphics\17.0.1\javafx-graphics-17.0.1-win.jar;C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-controls\17.0.1\javafx-controls-17.0.1-win.jar;C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-base\17.0.1\javafx-base-17.0.1-win.jar;D:\IntellijIDEA\JP_Java\Lab4\target\classes;C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-fxml\17.0.1\javafx-fxml-17.0.1-win.jar -Djdk.module.main=Lab4 Lab4/com.pwr.App
 
 Host: AMD Ryzen 7 4800H with Radeon Graphics         , 16 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.2364)
 Time: Thu Dec  7 20:49:13 2023  Windows 10 , 64 bit Build 19041 (10.0.19041.2364) elapsed time: 64.849424 seconds (0d 0h 1m 4s)
@@ -735,7 +735,7 @@ symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Pr
 
 VM Arguments:
 jvm_args: -javaagent:D:\IntellijIDEA\IntelliJ IDEA 2023.1\lib\idea_rt.jar=58697:D:\IntellijIDEA\IntelliJ IDEA 2023.1\bin -Dfile.encoding=UTF-8 --module-path=C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-graphics\17.0.1\javafx-graphics-17.0.1-win.jar;C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-controls\17.0.1\javafx-controls-17.0.1-win.jar;C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-base\17.0.1\javafx-base-17.0.1-win.jar;D:\IntellijIDEA\JP_Java\Lab4\target\classes;C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-fxml\17.0.1\javafx-fxml-17.0.1-win.jar -Djdk.module.main=Lab4 
-java_command: Lab4/com.pwr.Main
+java_command: Lab4/com.pwr.App
 java_class_path (initial): C:\Users\Lenovo\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\Lenovo\.m2\repository\com\google\protobuf\protobuf-java\3.21.9\protobuf-java-3.21.9.jar;C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-controls\17.0.1\javafx-controls-17.0.1.jar;C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-graphics\17.0.1\javafx-graphics-17.0.1.jar;C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-base\17.0.1\javafx-base-17.0.1.jar;C:\Users\Lenovo\.m2\repository\org\openjfx\javafx-fxml\17.0.1\javafx-fxml-17.0.1.jar
 Launcher Type: SUN_STANDARD
 
