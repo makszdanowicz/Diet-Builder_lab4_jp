@@ -1,22 +1,35 @@
 package com.pwr.db;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class DataBase implements InformationWorker,Meal{
-    private final String dbURL = "jdbc:mysql://localhost:3306/diet";
-    private final String dbUserName = "root";
-    private final String dbPassword = "HelloWorld12345";
+    private String dbURL;
+    private String dbUserName;
+    private String dbPassword;
     private Connection connection;
     public DataBase()
     {
         try {
+            //Reading database information from config file
+            Properties properties = new Properties();
+            InputStream input = getClass().getResourceAsStream("/config_db.properties");
+            properties.load(input);
+            dbURL = properties.getProperty("db.url");
+            dbUserName = properties.getProperty("db.username");
+            dbPassword = properties.getProperty("db.password");
+
             connection = DriverManager.getConnection(dbURL,dbUserName,dbPassword);
         } catch (SQLException e) {
             System.out.println("You have a problem with connection to DB" + e.getMessage());
+        } catch (FileNotFoundException e) {
+            System.out.println("Error.There is no config file found: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Problem with reading config file: " + e.getMessage());
         }
     }
     @Override
