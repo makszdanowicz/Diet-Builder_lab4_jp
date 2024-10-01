@@ -121,7 +121,7 @@ Uruchom aplikację przy pomocy pliku wykonywalnego JAR, wpisując do konsoli:
 
 ### Podłączenie bazy danych do projektu
 
-**Krok 1:** Stworz bazę danych w MySQL i zaimportuj plik `diet_schema.sql`
+**Krok 1:** Stworz bazę danych w MySQL i zaimportuj plik `diet_schema.sql` z `/docs`
 
 **Krok 2:** W katalogu `/src/main/resources/` stwróz plik konfiguracyjny o nazwie `config_db.properties`
 
