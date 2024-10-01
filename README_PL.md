@@ -1,5 +1,8 @@
 
 #  Diet Builder
+Projekt jest realizacją laboratorium na Politechnice Wrocławskiej w ramach przedmiotu Języki Programowania. Przedstawia aplikację z interfejsem graficznym (GUI), wykonaną przy użyciu technologii JavaFX, która korzysta z bazy danych MySQL. W projekcie zastosowano również narzędzie Maven do zarządzania zależnościami i budowania aplikacji.
+
+## Opis projektu
 Diet Builder to aplikacja z graficznym interfejsem użytkownika, która umożliwia tworzenie spersonalizowanej listy zakupów. Aplikacja automatycznie oblicza liczbę kalorii każdego posiłku oraz poszczególnych produktów, co ułatwia planowanie diety i kontrolowanie spożycia kalorii. 
 
 
