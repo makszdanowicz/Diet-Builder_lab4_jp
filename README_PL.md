@@ -9,7 +9,7 @@ Diet Builder to aplikacja z graficznym interfejsem użytkownika, która umożliw
 ## Spis treści
 
  - [Funkcjonalność](#funkcjonalność)
- - [](#)
+ - [Zarządzanie Bazą Danych Produktów i Posiłków](#db---zarządzanie-bazą-danych-produktów-i-posiłków)
  - [Instalacja i uruchomenie aplikacji](#instalacja-i-uruchomenie-aplikacji)
  - [Interface aplikacji](#interface-aplikacji)
  - [Kontakt](#kontakt)
@@ -103,7 +103,7 @@ Rozpocznij od sklonowania repozytorium Diet Builder na swój lokalny system. To 
   git clone https://github.com/makszdanowicz/Diet-Builder_lab4_jp.git
 ```
 
-**Krok 2: Przejdź do  `Podłączenie bazy danych do projektu`
+**Krok 2: Przejdź do  `Podłączenie bazy danych do projektu`**
 
 **Krok 3: Przejdź do katalogu projektu**
 
